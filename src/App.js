@@ -4,7 +4,7 @@ import About from "./components/About"; // Import the About component
 import Navbar from "./components/Navbar";
 import Texty from "./components/texty";
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -41,8 +41,8 @@ function App() {
         <Alert alert={alert} />
         <div className="container my-3">
           <Routes>
-            <Route path="/" element={<Texty showAlert={showAlert} heading="Insert your Text below to Analyze" mode={mode} />} />
-            <Route path="/about" element={<About />} />
+            <Route exact path="/" element={<Texty showAlert={showAlert} heading="Insert your Text below to Analyze" mode={mode} />} />
+            <Route exact path="/about" element={<About />} />
           </Routes>
         </div>
       </Router>
