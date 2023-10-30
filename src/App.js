@@ -42,7 +42,7 @@ function App() {
         <div className="container my-3">
           <Routes>
             <Route exact path="/" element={<Texty showAlert={showAlert} heading="Insert your Text below to Analyze" mode={mode} />} />
-            <Route exact path="/about" element={<About />} />
+            <Route exact path="/about" element={<About mode={mode}/>} />
           </Routes>
         </div>
       </Router>

@@ -73,25 +73,25 @@ export default function Texty(props) {
           }}
         ></textarea>
         <button
-          className="btn btn-outline-primary mt-2 mx-2"
+          className="btn btn-outline-primary mx-2 my-1"
           onClick={handleLowerCase}
         >
           convert text to Lowercase
         </button>
         <button
-          className="btn btn-outline-primary mt-2"
+          className="btn btn-outline-primary my-1 my-1"
           onClick={handleUpperCase}
         >
           convert text to Upercase
         </button>
         <button
-          className="btn btn-outline-primary mt-2 mx-2"
+          className="btn btn-outline-primary mx-2"
           onClick={handleClear}
         >
           clear text
         </button>
         <button
-          className="btn btn-outline-primary mt-2 mx-2"
+          className="btn btn-outline-primary mx-2 my-1"
           onClick={handleExtraSpaces}
         >
           remove extra space
@@ -106,10 +106,10 @@ export default function Texty(props) {
       <div className="container my-3">
         <h4>Your text is about</h4>
         <p>
-          {text.split(" ").length} words and {text.length}{" "}
+          {text.split(" ").filter((element)=>{return element.length!==0}).length} words and {text.length}{" "}
         </p>
 
-        <p>{0.008 * text.split(" ").length} time to read </p>
+        <p>{0.008 * text.split(" ").filter((element)=>{return element.length!==0}).length} minutes to read </p>
         <h2>Preview</h2>
         <p>{text.length > 0 ? text : "your text will be shown here"}</p>
       </div>
