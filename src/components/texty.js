@@ -32,6 +32,10 @@ export default function Texty(props) {
 
     }
   };
+  const handleCopy = () => {
+    navigator.clipboard.writeText(text)
+    props.showAlert("copied to clipboard", "success")
+  }
   // const handleExtraSpaces = () => {
   //   let newtext = text.split(/[ ]+/);
   //   setText(newtext.join(" "));
@@ -96,17 +100,17 @@ export default function Texty(props) {
         >
           remove extra space
         </button>
-        {/* <button
-          className="btn btn-outline-primary mt-2 mx-2"
-          onClick={handleCapitalize}
+        <button
+          className="btn btn-outline-primary  mx-2 my-1"
+          onClick={handleCopy}
         >
-          Captilize the text
-        </button> */}
+          Copy text
+        </button>
       </div>
       <div className="container my-3">
         <h4>Your text is about</h4>
         <p>
-          {text.split(" ").filter((element)=>{return element.length!==0}).length} words and {text.length}{" "}
+          {text.split(/\s+/).filter((element)=>{return element.length!==0}).length} words and {text.length}{" "}
         </p>
 
         <p>{0.008 * text.split(" ").filter((element)=>{return element.length!==0}).length} minutes to read </p>
