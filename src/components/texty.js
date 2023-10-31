@@ -36,15 +36,8 @@ export default function Texty(props) {
     navigator.clipboard.writeText(text)
     props.showAlert("copied to clipboard", "success")
   }
-  // const handleExtraSpaces = () => {
-  //   let newtext = text.split(/[ ]+/);
-  //   setText(newtext.join(" "));
-  //   if(text){
-  //   props.showAlert("Removed extra spaces" , "success")
-  //   }
-  // };
+  
   const handleExtraSpaces = () => {
-    // Split the text by one or more spaces and then join it with a single space
     let newtext = text.split(/\s+/).join(" ");
 
     // Check if extra spaces were removed

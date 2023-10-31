@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 export default function Navbar(props) {
   return (
     <div>
-      <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
+      <nav
+        className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}
+      >
         <div className="container-fluid">
           <a className="navbar-brand" href="/">
             {props.name}
@@ -66,6 +68,11 @@ export default function Navbar(props) {
             </ul>
             <form className="d-flex" role="search">
               <input
+                style={{
+                  backgroundColor:
+                    props.mode === "dark" ? "transparent" : "white",
+                  color: props.mode === "dark" ? "white" : "black",
+                }}
                 className="form-control me-2"
                 type="search"
                 placeholder="Search"
@@ -74,7 +81,11 @@ export default function Navbar(props) {
               <button className="btn btn-outline-primary" type="submit">
                 Search
               </button>
-              <div className={`form-check form-switch mx-3 text-${props.mode === "dark" ? "light" : "dark" }`}>
+              <div
+                className={`form-check form-switch mx-3 text-${
+                  props.mode === "dark" ? "light" : "dark"
+                }`}
+              >
                 <input
                   className="form-check-input"
                   type="checkbox"
@@ -85,7 +96,7 @@ export default function Navbar(props) {
                   className="form-check-label"
                   htmlFor="flexSwitchCheckDefault"
                 >
-                Enable mode
+                  Enable mode
                 </label>
               </div>
             </form>
